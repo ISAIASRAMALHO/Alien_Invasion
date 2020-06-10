@@ -10,8 +10,8 @@ def run_game():
     pygame.init()
     cfg = Settings()
     screen = pygame.display.set_mode( (cfg.screen_width, cfg.screen_height))
-    pygame.display.set_caption('Alien Invasion')
-    nave = Ship(screen)
+    pygame.display.set_caption('INVASÃO ALIEN')
+    nave = Ship(cfg, screen)
     bg_color = (230, 230, 230)
     # lOOP PRINCIPAL
     while True:
