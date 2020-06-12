@@ -1,13 +1,14 @@
 import sys
 import pygame
 from bullet import Balas
+from pygame.sprite import Sprite
 
 def check_events(cfg, screen, nave, balas):
     # RESPONDE A EVENTOS DE PRESSIONAMENTO DE TECLAS E MOUSE.
     for event in pygame.event.get():
-        if event.type == pygame.QUIT:
+        if event.type == pygame.QUIT or event.type == pygame.K_ESCAPE:
             sys.exit()
-        elif event.type == pygame.KEYDOWN and event.key == pygame.K_SPACE:
+        if event.type == pygame.KEYDOWN and event.key == pygame.K_SPACE:
             nova_bala = Balas( cfg, screen, nave)
             balas.add( nova_bala )
         nave.moving_right = ( event.type == pygame.KEYDOWN and event.key == pygame.K_RIGHT )
